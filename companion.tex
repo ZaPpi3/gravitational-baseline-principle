@@ -1,0 +1,312 @@
+\documentclass[aps,prd,onecolumn,nofootinbib,superscriptaddress]{revtex4-2}
+
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{The Gravitational Baseline Principle:\\ A Minimal Mathematical Companion}
+
+\author{Paul William Jarvis}
+\affiliation{Independent Researcher, United Kingdom. ORCID: 0009-0009-8933-857X}
+
+\date{3 October 2026}
+
+\begin{abstract}
+This companion gives the mathematics behind the Gravitational Baseline Principle: the claim that gravity is not a force acting within spacetime but the structure that defines spacetime, emerging from a deeper substrate with no geometry of its own. Starting from nothing but a collection of locally interacting quantum systems, six results follow from established mathematics. Locality alone gives a universal speed limit, and observation of the highest-energy cosmic rays requires the substrate's grain to lie far below the Planck length. Requiring that speed limit to be a single, constant speed of light fixes how distance is read from correlation, and the space that results is flat on a regular pattern of interactions, as the space of our universe is observed to be. Treating entanglement thermodynamically gives Einstein's field equation as an equation of state, with the cosmological constant a constant of integration: a positive value is allowed, and dark energy must be exactly constant, $w=-1$, a prediction now under observational test. The universality of gravity, that all energy gravitates in the same way, follows when the curvature produced by matter is carried by a collective field of the substrate governed by a constraint, just as the universality of electric fields follows from Gauss's law. A standard theorem shows that this is the only form emergent gravity can take in the substrate's own space. And three spatial dimensions are the only ones in which that gravity propagates, long-range forces survive, and matter forms stable structures. Together these show gravity arising as the substrate's baseline structure rather than as one more force within it.
+\end{abstract}
+
+\maketitle
+
+\section{The Substrate}
+\label{sec:substrate}
+
+Take a collection of elementary quantum systems labelled by an index set $I$, each with its own Hilbert space $\mathcal{H}_i$, so that the whole has Hilbert space $\mathcal{H} = \bigotimes_{i\in I}\mathcal{H}_i$. Which systems interact directly is recorded by a graph $G = (I, E)$: a list of pairs, with no lengths, angles or dimension attached. The dynamics is a local Hamiltonian
+\begin{equation}
+H = \sum_{i\in I} h_i + \sum_{\langle i,j\rangle \in E} h_{ij}, \qquad \|h_i\|,\ \|h_{ij}\| \le J,
+\end{equation}
+and the state of the substrate is $|\Psi\rangle \in \mathcal{H}$. Nothing here presupposes space, time intervals, or a speed of light. The only structure is which systems talk to which, and how strongly.
+
+\section{A Universal Speed Limit}
+\label{sec:causal}
+
+For an operator $A$ acting on system $i$, let $A(t) = e^{iHt} A e^{-iHt}$. The Lieb-Robinson theorem \cite{liebrobinson1972} states that there are constants $v_{\mathrm{LR}}$, $\mu$ and $C$, fixed only by $J$ and the largest number of neighbours any system has, such that for any operator $B$ on system $j$,
+\begin{equation}
+\big\|[A(t), B]\big\| \le C\,\|A\|\,\|B\|\; e^{-\mu\,(d_G(i,j) - v_{\mathrm{LR}}|t|)},
+\label{eq:lr}
+\end{equation}
+where $d_G(i,j)$ is the number of steps between $i$ and $j$ in the graph. Outside the cone $d_G(i,j) = v_{\mathrm{LR}}|t|$ the influence of $i$ on $j$ is exponentially small. A finite, universal speed limit therefore follows from locality alone. It is a theorem, not a postulate, and nothing resembling relativity was put in.
+
+The rate $v_{\mathrm{LR}}$ counts graph steps per unit time. If each step corresponds to a physical length $a$, the physical speed limit is
+\begin{equation}
+c = a\,v_{\mathrm{LR}}.
+\label{eq:c}
+\end{equation}
+
+A discrete substrate could in principle make the speed of light depend on energy, which observation forbids at first order: photons from the gamma-ray burst GRB 090510 arrive together to a precision that excludes a change of light speed proportional to photon energy up to 1.2 times the Planck energy \cite{abdo2009}. The substrate meets this automatically if it has the ordinary symmetries of time reversal and spatial inversion. Then the frequency of a long-wavelength excitation obeys $\omega^2(k) = \omega^2(-k)$ and is a smooth function of $k$, so
+\begin{equation}
+\omega^2(k) = c^2 k^2 + \beta\,a^2 k^4 + \dots, \qquad \frac{d\omega}{dk} = c\left(1 + \frac{3\beta}{2c^2}\,a^2k^2 + \dots\right).
+\end{equation}
+The correction to the speed of light begins at second order in $ak$, that is at second order in the ratio of the photon's energy to the lattice energy scale.
+
+Second order is constrained too, and more sharply than arrival times can show. A regular lattice slows high-energy excitations ($\beta<0$): on a cubic lattice with nearest-neighbour couplings, $\omega^2 = c^2 k^2 - c^2 a^2 k^4 S(\mathbf{n})/12 + \dots$, with $S(\mathbf{n}) = n_x^4+n_y^4+n_z^4$ between $\tfrac13$ and $1$. In the usual notation $\omega^2 = k^2 + \xi_2 k^4/E_P^2$ (units $\hbar = c = 1$), this is $\xi_2 = -(a/\ell_P)^2 S(\mathbf{n})/12$, with $\ell_P$ the Planck length. A photon slowed this way stops pair-producing on the cosmic microwave background above some upper energy, so photons above that energy would survive their journey and appear among the highest-energy cosmic rays. None are seen between $10^{19}$ and $10^{20}$~eV, which requires $\xi_2 \gtrsim -10^{-6}$, whether or not electrons carry a similar correction \cite{galaverni2008a, galaverni2008b}. The substrate's spacing must therefore satisfy
+\begin{equation}
+a \lesssim 2\times10^{-3}\,\ell_P :
+\label{eq:grain}
+\end{equation}
+its grain lies far below the Planck length.
+
+\section{Distance From Correlation, Fixed by the Speed Limit}
+\label{sec:geometry}
+
+For a region $A$ of the substrate, let $\rho_A$ be its reduced state and $S(A) = -\mathrm{Tr}\,\rho_A\log\rho_A$ its entanglement entropy. The mutual information between two systems,
+\begin{equation}
+I(i{:}j) = S(i) + S(j) - S(ij),
+\end{equation}
+measures how strongly they are correlated. Strongly correlated systems behave as if close together, weakly correlated ones as if far apart, so distance is taken to be a decreasing function of correlation, as proposed by Cao, Carroll and Michalakis \cite{cao2017}:
+\begin{equation}
+d(i,j) = f\big(I(i{:}j)\big).
+\end{equation}
+
+\paragraph{Correlation alone does not fix the shape of space.} Suppose correlation falls off as a power of graph separation $r$, $I(r) = I_0\, r^{-\eta}$, as it does in a critical substrate. Two natural choices of $f$ give
+\begin{align}
+f(I) &= -\log(I/I_0) & &\Rightarrow & d(r) &= \eta\log r, \\
+f(I) &= (I/I_0)^{-1/\eta} & &\Rightarrow & d(r) &= r.
+\end{align}
+The first is the distance between two points on the edge of a hyperbolic (saddle-shaped) space, measured through its interior; this is the geometry of entanglement renormalization \cite{swingle2012} and of holography \cite{maldacena1997, ryutakayanagi2006}. The second is flat. Both are legitimate decreasing functions of the same correlations, so the shape of space is not contained in the pattern of correlation alone. Something else must decide it.
+
+\paragraph{The speed limit decides it.} A signal travelling at the Lieb-Robinson speed reaches graph separation $r = v_{\mathrm{LR}}t$ at time $t$. Its speed measured in the emergent distance is
+\begin{equation}
+\frac{d}{dt}\,d\big(v_{\mathrm{LR}}t\big) =
+\begin{cases}
+\eta/t, & f = -\log, \\
+v_{\mathrm{LR}}, & f = (I/I_0)^{-1/\eta}.
+\end{cases}
+\end{equation}
+Under the logarithmic choice the speed of light would fall as $1/t$, and no single constant $c$ could exist. The power-law choice gives a constant speed. In general, the speed is constant exactly when $d$ grows in proportion to graph separation, so equation~(\ref{eq:c}) fixes $f$ up to a constant factor: whatever the correlations do, the emergent distance must agree with graph distance on large scales,
+\begin{equation}
+d(i,j) \propto d_G(i,j) \quad (d_G \gg 1).
+\end{equation}
+This is the first reinforcement of the principle: the substrate's own causal structure selects its geometry. Distance and the speed of light are not independent inputs; one determines the other.
+
+\paragraph{The shape of space follows the pattern of interaction.} With distance fixed this way, the large-scale shape of space is the large-scale shape of the graph $G$, which is read from how the number of systems within distance $R$ grows:
+\begin{equation}
+N(R) \propto R^D \ \Rightarrow\ \text{flat space of dimension } D, \qquad N(R) \propto e^{R/L} \ \Rightarrow\ \text{hyperbolic space of curvature radius} \sim L.
+\end{equation}
+A regular pattern of interaction therefore gives flat space. Observation agrees: combined measurements of the cosmic microwave background and of baryon acoustic oscillations find the curvature parameter $\Omega_K$ within a few parts in a thousand of zero \cite{desi2025, chen2025}. Current data lean weakly towards a slightly open, saddle-shaped universe, $\Omega_K \approx +0.002$ \cite{chen2025}, which corresponds to a curvature radius $R_K = (c/H_0)/\sqrt{\Omega_K} \approx 20$ Hubble radii. The principle accommodates this too, if the graph has polynomial growth on scales below $R_K$ and exponential growth beyond; which of the two describes our universe is left to observation.
+
+\section{Why the Cosmological Constant Is Free}
+\label{sec:lambda}
+
+The shape of a slice of space is tied to its contents by the Hamiltonian constraint of general relativity,
+\begin{equation}
+{}^{(3)}\!R + K^2 - K_{ij}K^{ij} = 16\pi G\rho + 2\Lambda,
+\label{eq:hamiltonian}
+\end{equation}
+where ${}^{(3)}\!R$ is the curvature of the slice and $K_{ij}$ describes how fast it is expanding. For a flat, expanding universe, $K_{ij} = H g_{ij}$ and ${}^{(3)}\!R = 0$, and equation~(\ref{eq:hamiltonian}) becomes the Friedmann equation
+\begin{equation}
+H^2 = \frac{8\pi G}{3}\rho + \frac{\Lambda}{3},
+\end{equation}
+in which $\Lambda$ may take either sign. The flat geometry selected in Section~\ref{sec:geometry} is therefore fully compatible with the observed positive cosmological constant. The same holds for a slightly open, expanding universe: its saddle-shaped slices add ${}^{(3)}\!R = -6/R_K^2$ to the left side, with $R_K$ the curvature radius at that moment, which a slightly faster expansion balances, $H^2 = \tfrac{8\pi G}{3}\rho + \tfrac{\Lambda}{3} + \tfrac{1}{R_K^2}$, again with $\Lambda>0$ allowed.
+
+\section{Gravity as an Equation of State}
+\label{sec:dynamics}
+
+Following Jacobson \cite{jacobson1995}, consider any small patch of a causal horizon in the emergent spacetime, generated by light rays with tangent $k^a$ and affine parameter $\lambda$. Two ingredients are needed. The first is that the entanglement entropy across the horizon is proportional to its area,
+\begin{equation}
+\delta S = \frac{\delta A}{4G\hbar},
+\label{eq:area}
+\end{equation}
+the area law that is generic for ground states of local Hamiltonians such as that of Section~\ref{sec:substrate}, with the constant of proportionality defining Newton's constant $G$. The second is that a uniformly accelerated observer just outside the horizon sees the vacuum at the Unruh temperature $T = \hbar\kappa/2\pi$. The energy crossing the horizon is $\delta Q = \int T_{ab}k^a k^b\,\lambda\,d\lambda\,dA$, and by the Raychaudhuri equation the area changes as $\delta A = -\int R_{ab}k^ak^b\,\lambda\,d\lambda\,dA$. Requiring the Clausius relation
+\begin{equation}
+\delta Q = T\,\delta S
+\end{equation}
+for every horizon patch and every null direction $k^a$ gives $R_{ab}k^ak^b = 8\pi G\,T_{ab}k^ak^b$ for all null $k^a$, hence $R_{ab} + \Phi g_{ab} = 8\pi G\,T_{ab}$ for some function $\Phi$. Conservation of energy, $\nabla^aT_{ab}=0$, together with the contracted Bianchi identity fixes $\Phi = -\tfrac12 R + \Lambda$, so
+\begin{equation}
+G_{ab} + \Lambda g_{ab} = 8\pi G\,T_{ab}.
+\end{equation}
+Einstein's equation appears as a condition of thermodynamic equilibrium of the substrate's entanglement, not as a fundamental law. This is the second reinforcement of the principle: the law of gravity is a property of the substrate as a whole, in the same way that the laws of thermodynamics are properties of many particles rather than of any one.
+
+\paragraph{Dark energy is exactly constant.} The cosmological constant $\Lambda$ enters only as a constant of integration, which is why its sign is not fixed and a positive value, as observed, is allowed. For the same reason it cannot change: energy conservation and the Bianchi identity hold at every point and every time, so $\Lambda$ is the same everywhere and always, and the substrate supplies no further field that could make dark energy evolve. The principle therefore predicts that dark energy is a true cosmological constant, with equation of state
+\begin{equation}
+w = -1 \quad \text{at all epochs.}
+\end{equation}
+This is under active test. Distance measurements from DESI, combined with the cosmic microwave background, show a preference of 2.7 standard deviations for dark energy that evolves, rising to 3.0 to 3.5 standard deviations when type Ia supernovae are added, depending on the supernova sample \cite{desi2025, desi2026}. The most precise of these measurements deep in the matter-dominated era, from the Lyman-alpha forest at redshift 2.33, agrees with a constant $\Lambda$ and lies about two standard deviations from the best-fitting evolving model \cite{desi2026}. A confirmed evolution would rule out the principle in its minimal form.
+
+\paragraph{The area law fixes how finely the substrate is woven.} On a substrate of spacing $a$, a surface of area $A$ crosses about $A/a^2$ links. If each crossed link carries entanglement entropy $\eta$, the entropy across the surface is $\eta A/a^2$, and matching equation~(\ref{eq:area}) gives
+\begin{equation}
+a^2 = 4\eta\,\ell_P^2 .
+\end{equation}
+With the bound (\ref{eq:grain}), $\eta \lesssim 10^{-6}$: each Planck area must be crossed by at least about $2\times10^{5}$ weakly entangled links. The substrate carries a very large number of degrees of freedom per Planck area, which is also what holographic derivations of gravity from entanglement require \cite{faulkner2014}.
+
+\section{Why Gravity Is Universal}
+\label{sec:universal}
+
+Gravity is universal: every form of energy gravitates, and far from a compact source its field depends only on the total energy, not on what the source is made of. This section shows why the substrate produces exactly this, and in which form.
+
+Take the simplest substrate that can be solved exactly, a three-dimensional lattice of coupled oscillators with $H = \tfrac12\sum_j p_j^2 + \tfrac12 x^{\mathsf T}Vx$, where $V = -\nabla^2$ is the lattice Laplacian. A source that merely reshapes the pattern of correlation, for instance by stiffening one site, changes the correlations at distance $r$ only in proportion to $r^{-3}$, and one spread over a link changes them in proportion to $r^{-5}$, whatever energy it carries, and the distances read from those correlations change in the same way. The mass of a body is read from the $1/r$ part of the distortion it produces far away, so a distortion falling faster than $1/r$ carries no mass: correlation changes alone do not produce gravity.
+
+\paragraph{A source that couples to a collective field gives exactly Newton's law.} A source can instead couple directly to the substrate's collective field, $H \to H - J^{\mathsf T}x$. Completing the square,
+\begin{equation}
+H - J^{\mathsf T}x = \tfrac12\sum_j p_j^2 + \tfrac12(x - s)^{\mathsf T}V(x-s) - \tfrac12 J^{\mathsf T}V^{-1}J, \qquad s = V^{-1}J,
+\end{equation}
+so the field is displaced to $\langle x\rangle = s = V^{-1}J$. Since $V^{-1}(r) \to 1/(4\pi r)$ at large $r$, expanding about the centre of the source gives
+\begin{equation}
+\langle x(r)\rangle = \sum_{r'} \frac{J(r')}{4\pi|r - r'|} = \frac{Q}{4\pi r} + O(r^{-2}), \qquad Q = \sum_{r'}J(r').
+\end{equation}
+This is Newton's law: a $1/r$ field whose strength depends only on the total charge $Q$ of the source, whatever its shape. The universality comes from the same place as the universality of Gauss's law in electromagnetism, $\oint \mathbf{E}\cdot d\mathbf{A} = Q/\varepsilon_0$: the field is governed by a constraint that counts only the total charge. In gravity the corresponding constraint is equation~(\ref{eq:hamiltonian}), whose weak-field limit $\nabla^2\phi = 4\pi G\rho$ counts only total energy. That is why all energy gravitates equally: the equivalence principle is a consequence of gravity being carried by a constrained collective field.
+
+\paragraph{How the collective field relates to entanglement.} In the oscillator substrate the displaced ground state is $|\Psi_J\rangle = U|\Psi_0\rangle$ with $U = \prod_j e^{-is_jp_j}$, a product of operators each acting on a single site. For any region $A$, $\rho_A \to U_A\rho_AU_A^\dagger$, which has the same eigenvalues, so every entanglement entropy and every mutual information is unchanged. In a free substrate, then, the two are separate layers: the pattern of correlation fixes the baseline geometry of empty space (Section~\ref{sec:geometry}), and the collective field carries the curvature produced by matter. That cannot be the whole story in the substrate the principle requires, because Section~\ref{sec:dynamics} needs the entanglement across every horizon to follow its area, including the change in area that curvature produces. In the required substrate the collective field must therefore also be written into the entanglement. How it must be written follows from fields living on a fixed set of links. A field coupled to a slowly varying metric on such links has, wherever the metric is locally constant, a Hamiltonian that is a local rescaling of the flat one, $\phi_j \to \lambda_j\phi_j$, $p_j \to p_j/\lambda_j$, which leaves every entanglement entropy unchanged. Its entanglement across a surface therefore counts the links the surface cuts, not the surface's physical area. For the area law to follow curvature for every kind of matter alike, the collective field must set how many entangled links cross each surface, as in descriptions of quantum geometry where area counts the links crossing a surface \cite{rovelli1995}, rather than live on a fixed set of them. Holographic field theories, with their very large number of degrees of freedom, show that a collective field can be carried in the entanglement in this way: there every source of energy becomes a source of gravity, because every degree of freedom contributes to entanglement \cite{swingle2014}. Correlation changes alone do not produce universal gravity; a constrained collective field does, and in the substrate the principle requires, that field is carried in the entanglement as well. Space is the substrate's pattern of correlation, and gravity is the substrate's collective response to energy, written into that same pattern.
+
+\section{Why This Is the Only Form Emergent Gravity Can Take}
+\label{sec:ww}
+
+The Weinberg-Witten theorem \cite{weinbergwitten1980} states that a theory with a Lorentz-covariant, conserved energy-momentum tensor cannot contain a massless spin-2 particle that carries energy and momentum, whether elementary or composite. Section~\ref{sec:causal} gives the substrate a single speed of light with no first-order dependence on energy and a tightly bounded second-order one, so on large scales its spacetime is Lorentz invariant to the precision observation demands, and Section~\ref{sec:geometry} places the emergent space in the substrate's own spacetime. So the graviton cannot be an ordinary composite particle of the substrate. The known ways around the theorem \cite{carlip2014} are three. The graviton could be non-relativistic, but gravitational waves from the neutron-star merger GW170817 arrived with its gamma rays, fixing their speed to that of light within about one part in $10^{15}$ \cite{gw170817}. Gravity could live in a different, higher-dimensional spacetime, as in holography; but that spacetime is anti-de Sitter, with $\Lambda<0$, which observation rules out. Or the substrate can carry an emergent gauge structure, in which the graviton appears as a collective mode together with its own gauge symmetry, so that it has no gauge-invariant energy-momentum tensor for the theorem to act on. Lattice models of quantum bits with exactly such emergent graviton modes exist \cite{guwen2012}.
+
+Only this last route is compatible with both observations, and it is precisely the form reached in Section~\ref{sec:universal}: gravity as a constrained collective field of the substrate, not a particle added to it. This is the strongest reinforcement of the principle. The theorem that forbids gravity from being one more field within spacetime is the same theorem that leaves, as the only consistent option, gravity as the structure of the substrate itself.
+
+\section{Why Three Spatial Dimensions}
+\label{sec:three}
+
+The large-scale dimension $D$ of space is the dimension of the substrate's pattern of interaction (Section~\ref{sec:geometry}). The principle's own ingredients admit only one value.
+
+\paragraph{The field of a source in $D$ dimensions.} Any long-range field of the substrate, the gravitational collective field of Section~\ref{sec:universal} or an emergent gauge field for electromagnetism, has as its static response the Green's function of the graph Laplacian. On a graph of dimension $D$ this is, on large scales, that of the continuum Laplacian, $\nabla^2 G = -\delta^{(D)}$:
+\begin{equation}
+G(r) \propto -\log r \ (D=2), \qquad G(r) \propto r^{-(D-2)} \ (D\ge 3).
+\end{equation}
+Only the large-scale dimension enters, not the fine structure of the graph.
+
+\paragraph{From above: stable structures need $D \le 3$.} A body of angular momentum $\ell$ in the attractive potential $U = -k\,r^{-(D-2)}$ has effective potential $U_{\mathrm{eff}} = \ell^2/2r^2 - k\,r^{-(D-2)}$. A circular orbit at $r_0$ requires $\ell^2 = (D-2)k\,r_0^{4-D}$, and then
+\begin{equation}
+U_{\mathrm{eff}}''(r_0) = (D-2)\,k\,r_0^{-D}\,(4-D),
+\end{equation}
+positive only for $D<4$: in four or more dimensions no orbit is stable \cite{ehrenfest1917}. For quantum matter, rescaling lengths $r\to\lambda r$ in $H = -\nabla^2 - g\,r^{-(D-2)}$ scales the kinetic term as $\lambda^{-2}$ and the potential as $\lambda^{-(D-2)}$. For $D=3$ the balance fixes a Bohr radius $a_B \propto 1/g$, arbitrarily larger than the substrate's grain at weak coupling. For $D=4$ the two terms scale alike and there is no intrinsic size: below a critical coupling nothing binds, above it the particle falls to the grain. For $D\ge5$ every bound state collapses to the grain \cite{tegmark1997}. Only three dimensions allow matter to form structures far larger than the substrate's discreteness.
+
+\paragraph{From below: propagating gravity and long-range forces need $D \ge 3$.} A massless spin-2 field in $d = D+1$ spacetime dimensions has $d(d-3)/2$ propagating polarizations: none for $D=2$, two for $D=3$. Correspondingly, the Newtonian potential of a static mass carries the factor $(d-3)/(d-2)$ from the trace of Einstein's equation, which vanishes for $D=2$: two-dimensional Einstein gravity has neither waves nor attraction. Emergent gauge phases with graviton-like modes are stable in three spatial dimensions and unstable in two \cite{rasmussen2016}; some fracton tensor theories survive in two \cite{pretko2017}, but their gravity is non-relativistic, which GW170817 excludes \cite{gw170817}. The electromagnetism that binds atoms fails in two dimensions as well: a compact U(1) gauge field on a two-dimensional lattice is always confined, because tunnelling defects proliferate and give the photon a mass \cite{polyakov1977}, while in three dimensions the same theory has a phase with a genuine massless photon \cite{arnold2003}.
+
+\paragraph{The window.}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$D$ & gravitational waves & long-range gauge force & stable orbits & atoms larger than the grain \\
+\hline
+2 & no & no & yes & no force to bind them \\
+3 & yes & yes & yes & yes \\
+4 & yes & yes & no & only at one fine-tuned coupling \\
+$\ge 5$ & yes & yes & no & no \\
+\hline
+\end{tabular}
+\end{center}
+Three is the only dimension in which the principle's gravity propagates, long-range forces survive, and matter binds. This is a selection by consistency: it shows why a universe built on this substrate and containing structured matter must be three-dimensional. It does not show that the substrate's dynamics prefer three dimensions; simple local rules for how an interaction graph rearranges itself do not single out any finite dimension, the difficulty shared by every approach in which space emerges from a network \cite{konopka2008}.
+
+\section{Relation to Earlier Work}
+\label{sec:earlier}
+
+The closest earlier work is the programme of Cao, Carroll and Michalakis, who proposed reading spatial geometry from mutual information in states with short-range correlations \cite{cao2017}, and of Cao and Carroll, who obtained the linearized Einstein equation from a modified entanglement equilibrium condition without a holographic boundary \cite{cao2018}. The substrate, the use of mutual information, and the thermodynamic route to Einstein's equation follow that work and Jacobson's \cite{jacobson1995}. The construction here differs in four ways.
+
+First, the function converting correlation into distance, left open there and taken to be a logarithm for definiteness, is fixed here by the requirement of a single, constant speed of light (Section~\ref{sec:geometry}). This matters for states with long-range, power-law correlations, which that work sets aside. Second, the speed limit is derived from locality through the Lieb-Robinson theorem rather than assumed, and the departures from Lorentz invariance a discrete substrate allows are restricted by symmetry and bounded by cosmic-ray observations (Section~\ref{sec:causal}); in \cite{cao2018} Lorentz invariance is assumed exactly. Third, the universality of gravity is traced to a constrained collective field, with the Weinberg-Witten theorem showing that this is the only form available (Sections~\ref{sec:universal} and \ref{sec:ww}), rather than to entanglement perturbations alone, whose curvature \cite{cao2017} notes may not be universal for non-local perturbations. Fourth, the principle yields consequences not addressed there: three spatial dimensions as the only consistent choice, a cosmological constant that is exactly constant in time, and a bound on how finely the substrate is woven (Sections~\ref{sec:causal}, \ref{sec:dynamics} and \ref{sec:three}).
+
+\section{The Principle, Formally}
+\label{sec:principle}
+
+The Gravitational Baseline Principle can now be stated without assuming spacetime. The substrate $(\mathcal{H}, G, H, |\Psi\rangle)$ determines, in order:
+\begin{enumerate}
+\item a universal speed limit $c = a\,v_{\mathrm{LR}}$, from locality, with a grain far below the Planck length (Section~\ref{sec:causal});
+\item a spatial geometry, from correlation, fixed by requiring that speed limit to be constant; flat on a regular pattern of interaction (Section~\ref{sec:geometry});
+\item a law of gravity, Einstein's equation, as the equilibrium condition of its entanglement, with a cosmological constant that is free in sign and exactly constant in time (Sections~\ref{sec:lambda} and \ref{sec:dynamics});
+\item the universality of gravity, from the constraint governing its collective field (Section~\ref{sec:universal}), in the only form the Weinberg-Witten theorem permits (Section~\ref{sec:ww});
+\item three spatial dimensions, as the only ones in which that gravity propagates and matter binds (Section~\ref{sec:three}).
+\end{enumerate}
+None of these presupposes a manifold, a metric or a light cone. Gravity is the substrate's baseline structure, against which all other interactions are measured, rather than a peer of them.
+
+\section{What the Principle Requires}
+\label{sec:requirements}
+
+The derivations above also say what a substrate must have for the principle to hold. It must be local, so that Section~\ref{sec:causal} applies, with time-reversal and inversion symmetry, so that the speed of light does not vary with energy at first order, and a grain far below the Planck length, with very many weakly entangled links crossing each Planck area, so that it does not vary measurably at second order either. Its pattern of interaction must be regular and three-dimensional on the scales we observe, so that space is flat and matter can bind. Its entanglement must obey an area law, so that Section~\ref{sec:dynamics} applies. And it must carry an emergent gauge structure whose collective mode responds to energy through a constraint, so that gravity is universal, with that collective field setting how many entangled links cross each surface, the same for every kind of matter, so that the area law of Section~\ref{sec:dynamics} follows curvature. Lattice models with each of these properties are known. A single model with all of them, in which the graviton emerges from quantum bits with exactly relativistic propagation, and an account of why the substrate settles into three dimensions dynamically rather than only consistently, are the natural next steps.
+
+\begin{thebibliography}{99}
+
+\bibitem{liebrobinson1972}
+E. H. Lieb and D. W. Robinson, ``The Finite Group Velocity of Quantum Spin Systems,'' \emph{Commun. Math. Phys.} \textbf{28}, 251 (1972).
+
+\bibitem{abdo2009}
+A. A. Abdo \emph{et al.} (Fermi LAT and GBM Collaborations), ``A limit on the variation of the speed of light arising from quantum gravity effects,'' \emph{Nature} \textbf{462}, 331 (2009).
+
+\bibitem{swingle2012}
+B. Swingle, ``Entanglement Renormalization and Holography,'' \emph{Phys. Rev. D} \textbf{86}, 065007 (2012), arXiv:0905.1317.
+
+\bibitem{maldacena1997}
+J. Maldacena, ``The Large N Limit of Superconformal Field Theories and Supergravity,'' \emph{Adv. Theor. Math. Phys.} \textbf{2}, 231 (1998).
+
+\bibitem{ryutakayanagi2006}
+S. Ryu and T. Takayanagi, ``Holographic Derivation of Entanglement Entropy from AdS/CFT,'' \emph{Phys. Rev. Lett.} \textbf{96}, 181602 (2006).
+
+\bibitem{desi2025}
+DESI Collaboration, ``DESI DR2 Results II: Measurements of Baryon Acoustic Oscillations and Cosmological Constraints,'' arXiv:2503.14738 (2025).
+
+\bibitem{desi2026}
+DESI Collaboration, ``DESI DR2 Results IV: Alcock-Paczy\'nski Measurements from the Lyman Alpha Forest and Cosmological Constraints,'' arXiv:2607.27410 (2026).
+
+\bibitem{chen2025}
+S.-F. Chen and M. Zaldarriaga, ``It's All Ok: Curvature in Light of BAO from DESI DR2,'' \emph{JCAP} \textbf{08}, 014 (2025), arXiv:2505.00659.
+
+\bibitem{jacobson1995}
+T. Jacobson, ``Thermodynamics of Spacetime: The Einstein Equation of State,'' \emph{Phys. Rev. Lett.} \textbf{75}, 1260 (1995), arXiv:gr-qc/9504004.
+
+\bibitem{weinbergwitten1980}
+S. Weinberg and E. Witten, ``Limits on Massless Particles,'' \emph{Phys. Lett. B} \textbf{96}, 59 (1980).
+
+\bibitem{gw170817}
+B. P. Abbott \emph{et al.} (LIGO Scientific, Virgo, Fermi GBM and INTEGRAL Collaborations), ``Gravitational Waves and Gamma-Rays from a Binary Neutron Star Merger: GW170817 and GRB 170817A,'' \emph{Astrophys. J. Lett.} \textbf{848}, L13 (2017).
+
+\bibitem{carlip2014}
+S. Carlip, ``Challenges for Emergent Gravity,'' \emph{Stud. Hist. Phil. Mod. Phys.} \textbf{46}, 200 (2014), arXiv:1207.2504.
+
+\bibitem{guwen2012}
+Z.-C. Gu and X.-G. Wen, ``Emergence of helicity $\pm 2$ modes (gravitons) from qubit models,'' \emph{Nucl. Phys. B} \textbf{863}, 90 (2012), arXiv:0907.1203.
+
+\bibitem{galaverni2008a}
+M. Galaverni and G. Sigl, ``Lorentz violation for photons and ultrahigh-energy cosmic rays,'' \emph{Phys. Rev. Lett.} \textbf{100}, 021102 (2008), arXiv:0708.1737.
+
+\bibitem{galaverni2008b}
+M. Galaverni and G. Sigl, ``Lorentz violation and ultrahigh-energy photons,'' \emph{Phys. Rev. D} \textbf{78}, 063003 (2008), arXiv:0807.1210.
+
+\bibitem{faulkner2014}
+T. Faulkner, M. Guica, T. Hartman, R. C. Myers and M. Van Raamsdonk, ``Gravitation from entanglement in holographic CFTs,'' \emph{JHEP} \textbf{03}, 051 (2014), arXiv:1312.7856.
+
+\bibitem{ehrenfest1917}
+P. Ehrenfest, ``In what way does it become manifest in the fundamental laws of physics that space has three dimensions?,'' \emph{Proc. Amsterdam Acad.} \textbf{20}, 200 (1917).
+
+\bibitem{tegmark1997}
+M. Tegmark, ``On the dimensionality of spacetime,'' \emph{Class. Quantum Grav.} \textbf{14}, L69 (1997).
+
+\bibitem{rasmussen2016}
+A. Rasmussen, Y.-Z. You and C. Xu, ``Stable gapless Bose liquid phases without any symmetry,'' arXiv:1601.08235 (2016).
+
+\bibitem{pretko2017}
+M. Pretko, ``Emergent gravity of fractons: Mach's principle revisited,'' \emph{Phys. Rev. D} \textbf{96}, 024051 (2017), arXiv:1702.07613.
+
+\bibitem{polyakov1977}
+A. M. Polyakov, ``Quark confinement and topology of gauge theories,'' \emph{Nucl. Phys. B} \textbf{120}, 429 (1977).
+
+\bibitem{arnold2003}
+G. Arnold, B. Bunk, T. Lippert and K. Schilling, ``Compact QED under scrutiny: it's first order,'' \emph{Nucl. Phys. B Proc. Suppl.} (2003), doi:10.1016/S0920-5632(03)01704-3, arXiv:hep-lat/0210010.
+
+\bibitem{cao2017}
+C. Cao, S. M. Carroll and S. Michalakis, ``Space from Hilbert Space: Recovering Geometry from Bulk Entanglement,'' \emph{Phys. Rev. D} \textbf{95}, 024031 (2017), arXiv:1606.08444.
+
+\bibitem{cao2018}
+C. Cao and S. M. Carroll, ``Bulk entanglement gravity without a boundary: Towards finding Einstein's equation in Hilbert space,'' \emph{Phys. Rev. D} \textbf{97}, 086003 (2018), arXiv:1712.02803.
+
+\bibitem{swingle2014}
+B. Swingle and M. Van Raamsdonk, ``Universality of Gravity from Entanglement,'' arXiv:1405.2933 (2014).
+
+\bibitem{rovelli1995}
+C. Rovelli and L. Smolin, ``Discreteness of area and volume in quantum gravity,'' \emph{Nucl. Phys. B} \textbf{442}, 593 (1995), arXiv:gr-qc/9411005.
+
+\bibitem{konopka2008}
+T. Konopka, F. Markopoulou and S. Severini, ``Quantum graphity: A model of emergent locality,'' \emph{Phys. Rev. D} \textbf{77}, 104029 (2008).
+
+\end{thebibliography}
+
+\end{document}
